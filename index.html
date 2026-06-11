@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookShelf — Open Textbook Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">&#9776; BookShelf</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Browse</a>
+        <a href="upload.html">Upload</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Free &amp; Open Access</p>
+      <h1 class="hero-title">Every Textbook,<br>Every Subject.</h1>
+      <p class="hero-sub">Upload, discover, and download academic textbooks across all disciplines — no account needed.</p>
+      <div class="search-wrap">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, or keyword…" />
+        <button class="search-btn" onclick="filterBooks()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf-section">
+    <div class="shelf-inner">
+      <h2 class="shelf-label">Browse by Category</h2>
+      <div class="shelf-tabs" id="categoryTabs">
+        <button class="tab active" data-cat="all" onclick="selectCategory(this,'all')">All Books</button>
+        <button class="tab" data-cat="science" onclick="selectCategory(this,'science')">Science &amp; Math</button>
+        <button class="tab" data-cat="arts" onclick="selectCategory(this,'arts')">Arts &amp; Humanities</button>
+        <button class="tab" data-cat="tech" onclick="selectCategory(this,'tech')">Technology &amp; Engineering</button>
+        <button class="tab" data-cat="business" onclick="selectCategory(this,'business')">Business &amp; Economics</button>
+        <button class="tab" data-cat="medicine" onclick="selectCategory(this,'medicine')">Medicine &amp; Health</button>
+        <button class="tab" data-cat="law" onclick="selectCategory(this,'law')">Law &amp; Social Studies</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="books-section">
+    <div class="books-inner">
+      <p class="results-count" id="resultsCount">Loading books…</p>
+      <div class="books-grid" id="booksGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <span class="empty-icon">📚</span>
+        <p>No books found. Try a different search or category.</p>
+        <a href="upload.html" class="btn-primary">Upload the first one</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo">BookShelf</span>
+      <p>An open platform for sharing academic knowledge freely.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
